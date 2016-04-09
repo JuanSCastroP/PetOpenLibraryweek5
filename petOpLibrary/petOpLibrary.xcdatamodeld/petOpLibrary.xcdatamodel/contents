@@ -1,9 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Event">
-        <attribute name="timeStamp" optional="YES" attributeType="Date"/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9525" systemVersion="15D21" minimumToolsVersion="Automatic">
+    <entity name="Libro" syncable="YES">
+        <attribute name="lib_Autor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lib_Titulo" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tiene" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Portada" inverseName="pertenece" inverseEntity="Portada" syncable="YES"/>
+    </entity>
+    <entity name="Portada" parentEntity="Libro" syncable="YES">
+        <attribute name="por_Portada" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="pertenece" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Libro" inverseName="tiene" inverseEntity="Libro" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="261" positionY="189" width="128" height="60"/>
+        <element name="Libro" positionX="261" positionY="198" width="128" height="90"/>
+        <element name="Portada" positionX="270" positionY="216" width="128" height="75"/>
     </elements>
 </model>
